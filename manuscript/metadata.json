@@ -1,0 +1,15 @@
+{
+  "id": "debrota-stacey-2019-luders-entropy-saturation-sic",
+  "revision": 2,
+  "problem_ids": ["debrota-stacey-2019-luders-entropy-saturation-sic"],
+  "topic": "DeBrota--Stacey, Section III, Conjecture 1 following Theorem 2: equality in the Haar-averaged output-entropy bound for a Luders MIC channel",
+  "title": "DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove Section III, Conjecture 1 immediately after Theorem 2 (p. 5) in DeBrota and Stacey, Physical Review A 100, 062327 (2019): a Luders minimal informationally complete channel attains the Haar-averaged output-entropy bound if and only if its measurement is itself a SIC, in every positive finite dimension. An exact entropy-deficit identity gives quantitative bounds, finite two-design tests and an arbitrary-finite-POVM equality characterization by weighted projective two-designs. The same decomposition recovers the entropy-exchange theorem and explains why the postscript's spectral-average replacement requires its saturation hypothesis.",
+  "summary": "A MIC attains the Haar-mean entropy bound exactly when it is a SIC. For arbitrary finite POVMs, equality characterizes weighted projective two-designs. Exact output-entropy and entropy-exchange deficits, depolarizing endpoint bounds and an anisotropic qubit example complete the coverage.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/0b9787cf2582188d0ab3da380adab3fa26bea39c/D5/S3/Quantum/Measurements/LudersEntropySaturationSIC.lean"
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-25"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/debrota-stacey-2019-luders-entropy-saturation-sic?version=2"
+license: "CC-BY-4.0"

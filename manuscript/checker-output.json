@@ -1,0 +1,93 @@
+{
+  "overcomplete_design": {
+    "arithmetic": "exact in Q(i,sqrt(2))",
+    "choi_eigenvalues": [
+      "1/2",
+      "1/6",
+      "1/6",
+      "1/6"
+    ],
+    "choi_identity": true,
+    "dimension": 2,
+    "effects": 6,
+    "matrix_units": 4,
+    "weighted_two_design": true
+  },
+  "schema_version": 1,
+  "scope": "Finite exact SIC identities in dimensions 1, 2, 3, spectral rank defects, a full-rank MIC, an overcomplete design and an anisotropic qubit MIC.",
+  "sic_examples": [
+    {
+      "arithmetic": "exact in Q(i,sqrt(3))",
+      "dimension": 1,
+      "entropy_expression": "0",
+      "gram_entries": 1,
+      "matrix_units": 1,
+      "projectors": 1,
+      "two_design": true
+    },
+    {
+      "arithmetic": "exact in Q(i,sqrt(3))",
+      "dimension": 2,
+      "entropy_expression": "-2*log(2)/3 + log(3)",
+      "gram_entries": 16,
+      "matrix_units": 4,
+      "projectors": 4,
+      "two_design": true
+    },
+    {
+      "arithmetic": "exact in Q(i,sqrt(3))",
+      "dimension": 3,
+      "entropy_expression": "-log(2)/2 + log(4)",
+      "gram_entries": 81,
+      "matrix_units": 9,
+      "projectors": 9,
+      "two_design": true
+    }
+  ],
+  "software": {
+    "python": "3.13.5",
+    "sympy": "1.14.0"
+  },
+  "spectral_average_example": {
+    "arithmetic": "exact in Q(i,sqrt(2),sqrt(3))",
+    "bloch_eigenvalues": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "dimension": 2,
+    "effects": 4,
+    "gram_determinant": "1/512",
+    "haar_mean_squared_output_radius": "1/8",
+    "haar_squared_radius_nonconstant": true,
+    "spectral_mean_comparison": "Strict inequality follows from the written strict-concavity argument.",
+    "tetrahedral_squared_output_radius": "1/8"
+  },
+  "spectral_gaps": {
+    "arithmetic": "integer",
+    "dimensions": [
+      1,
+      6
+    ],
+    "eigenvalue_alphabet": [
+      0,
+      1,
+      2
+    ],
+    "rank_at_most_one_iff_zero_gap": true,
+    "spectra": 1092
+  },
+  "status": "pass",
+  "strict_example": {
+    "T_minus_d": "sqrt(3)",
+    "arithmetic": "exact radicals",
+    "beta": "1/2",
+    "depolarizing_parameter": "1/3 + sqrt(3)/3",
+    "dimension": 2,
+    "effect_eigenvalues": [
+      "1/8",
+      "3/8"
+    ],
+    "entropy_deficit_lower_bound": "sqrt(3)*log(2)/6 > 0"
+  }
+}

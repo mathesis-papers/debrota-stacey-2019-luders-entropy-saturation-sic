@@ -1,0 +1,8 @@
+Original text and accompanying verification code by Haobo Ma and Wenlin Zhang
+are licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0), identifier cc-by-4.0.
+
+License terms: https://creativecommons.org/licenses/by/4.0/
+
+Cited scientific works and the separately linked Lean source retain their
+respective authorship and licenses.

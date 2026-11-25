@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 90386,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "1654db2b0ea0e2d24b3ac450b49a205e4cd0416791e1e8720667c4449135c889",
+      "sha256": "1654db2b0ea0e2d24b3ac450b49a205e4cd0416791e1e8720667c4449135c889"
+    },
+    "source": {
+      "bytes": 16809,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "4ebe2c766b50037dbfabd2520527d65af97d228c92fee326cd2d4084178dd195",
+      "sha256": "4ebe2c766b50037dbfabd2520527d65af97d228c92fee326cd2d4084178dd195"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We prove Section III, Conjecture 1 immediately after Theorem 2 (p. 5) in DeBrota and Stacey, Physical Review A 100, 062327 (2019): a Luders minimal informationally complete channel attains the Haar-averaged output-entropy bound if and only if its measurement is itself a SIC, in every positive finite dimension. An exact entropy-deficit identity gives quantitative bounds, finite two-design tests and an arbitrary-finite-POVM equality characterization by weighted projective two-designs. The same decomposition recovers the entropy-exchange theorem and explains why the postscript's spectral-average replacement requires its saturation hypothesis.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "0b9787cf2582188d0ab3da380adab3fa26bea39c",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/0b9787cf2582188d0ab3da380adab3fa26bea39c/D5/S3/Quantum/Measurements/LudersEntropySaturationSIC.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 90386,
+      "sha256": "1654db2b0ea0e2d24b3ac450b49a205e4cd0416791e1e8720667c4449135c889",
+      "url": "/api/v1/collected-papers/debrota-stacey-2019-luders-entropy-saturation-sic/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-25T17:32:10.883408471Z",
+    "record": "debrota-stacey-2019-luders-entropy-saturation-sic",
+    "repository_name": "debrota-stacey-2019-luders-entropy-saturation-sic",
+    "source": {
+      "bytes": 16809,
+      "sha256": "4ebe2c766b50037dbfabd2520527d65af97d228c92fee326cd2d4084178dd195",
+      "url": "/api/v1/collected-papers/debrota-stacey-2019-luders-entropy-saturation-sic/files/source?version=2"
+    },
+    "title": "DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-25T17:32:10.883408471Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "debrota-stacey-2019-luders-entropy-saturation-sic"
+  }
+}

@@ -1,0 +1,442 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements},pdfauthor={Haobo Ma; Wenlin Zhang}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\HS}{\mathrm{HS}}
+\title{DeBrota--Stacey, Section III,\\Conjecture 1 after Theorem 2:\\entropy saturation characterizes SIC measurements}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{3 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Section III, Conjecture 1 immediately after Theorem 2 (p.~5) in
+DeBrota and Stacey, \emph{Physical Review A} \textbf{100}, 062327 (2019):
+a L\"uders minimal informationally complete channel attains the
+Haar-averaged output-entropy bound if and only if its measurement is
+itself a SIC, in every positive finite dimension.
+An exact entropy-deficit identity separates the relative entropy of the
+output from a nonnegative rank defect of the measurement effects.
+It also gives quantitative bounds, finite two-design tests, and an equality
+characterization for arbitrary finite POVMs by weighted projective two-designs.
+The same decomposition recovers their entropy-exchange theorem and explains
+why the postscript's spectral-average replacement requires its saturation hypothesis.
+\end{abstract}
+
+\section{The question and its equality case}
+DeBrota and Stacey's Conjecture 1 in Section III of \cite{DS}, immediately
+after Theorem 2, concerns the equality case of an entropy bound, not the
+existence of SICs in every dimension. We show that equality forces the
+given measurement to be a SIC. Their Theorem 1 already characterizes the
+SIC depolarizing channel, and their Theorem 2 proves the bound and its
+attainment by a SIC. The postscript to arXiv:1907.10999v2 discusses
+unbiased qubit measurements. The argument below applies without an
+unbiasedness or covariance assumption.
+
+The channel characterization is also related to the earlier entanglement-breaking
+rank characterization of Pandey, Paulsen, Prakash and Rahaman
+\cite[Theorem III.2 and Corollary III.3]{PPPR}, first posted on 11 May 2018.
+The posing paper was first posted on 25 July 2019; its 5 February 2020
+version adds a postscript giving an unbiased-qubit argument.
+These prior results concern the channel equivalence and a special case,
+respectively. The equality argument below uses the Haar second moment
+from \cite[Lemma 1]{DS} and the relative entropy with respect to the
+SIC-channel output. Weighted two-designs provide finite input ensembles
+with the same second moment \cite[Section II]{Scott}. SIC conventions
+agree with \cite{Renes}.
+
+Let $d\geq1$. A minimal informationally complete measurement (MIC) is a
+family of $d^2$ positive semidefinite matrices $E_i$, linearly independent over $\mathbb C$,
+on $\mathbb C^d$ with $\sum_iE_i=\Id$. Its L\"uders channel is
+\[
+ \cE(X)=\sum_i A_iXA_i,\qquad A_i=\sqrt{E_i}.
+\]
+The effects are nonzero. A SIC has $E_i=\Pi_i/d$, with rank-one
+orthogonal projectors $\Pi_i$ satisfying
+\begin{equation}\label{eq:sic}
+ \tr(E_iE_j)=\frac{d\delta_{ij}+1}{d^2(d+1)}.
+\end{equation}
+Write $P=|\psi\rangle\langle\psi|$ and let $\mu$ be the normalized
+unitarily invariant measure on pure states. All logarithms are natural;
+$S(\rho)=-\tr(\rho\log\rho)$ uses $0\log0=0$. Set
+\[
+ B_d=\log(d+1)-\frac{2\log2}{d+1},\qquad
+ T=\sum_i(\tr A_i)^2,\qquad \sigma_P=\frac{\Id+P}{d+1}.
+\]
+
+\begin{theorem}\label{thm:main}
+For every MIC in positive finite dimension,
+\begin{equation}\label{eq:gap}
+ B_d-\int S(\cE(P))\,d\mu(P)
+ =\int D(\cE(P)\Vert\sigma_P)\,d\mu(P)
+   +\frac{(T-d)\log2}{d(d+1)}.
+\end{equation}
+Both terms on the right are nonnegative. Equality in the entropy bound
+holds if and only if the original MIC is a SIC. At equality,
+\begin{equation}\label{eq:depol}
+ \cE(X)=\frac{X+(\tr X)\Id}{d+1}\qquad(X\in M_d(\mathbb C)).
+\end{equation}
+\end{theorem}
+
+\section{Proof}
+For a density matrix $\rho$ and a positive definite density matrix
+$\sigma$, define $D(\rho\Vert\sigma)=\tr\rho(\log\rho-\log\sigma)$.
+Here are the nonnegativity and equality facts needed below, including
+singular $\rho$. Let $r_a,s_b$ be their eigenvalues and
+$w_{ab}=|\langle u_a,v_b\rangle|^2$. The matrix $w$ is doubly
+stochastic, and
+\[
+ D(\rho\Vert\sigma)=\sum_{a,b}w_{ab}r_a\log(r_a/s_b).
+\]
+The scalar inequality $r\log(r/s)\geq r-s$, for $r\geq0,s>0$,
+has equality exactly at $r=s$. Summing proves $D\geq0$, since both
+states have trace one. If $D=0$, then $w_{ab}>0$ implies $r_a=s_b$.
+Consequently $\rho v_b=s_bv_b$ for every $b$, so $\rho=\sigma$.
+Conversely, identical states have zero relative entropy.
+
+Since $P$ is a rank-one projector,
+$\log\sigma_P=-\log(d+1)\Id+(\log2)P$. Thus, with
+$a(P)=\tr(P\cE(P))$,
+\begin{equation}\label{eq:pointwise}
+ D(\cE(P)\Vert\sigma_P)
+   =\log(d+1)-S(\cE(P))-a(P)\log2.
+\end{equation}
+The matrices $\cE(P)$ are density matrices: positivity follows termwise,
+and their trace is $\tr(P\sum_i A_i^2)=1$.
+
+The Haar second moment is
+\begin{equation}\label{eq:moment}
+ \int P\otimes P\,d\mu(P)=\frac{\Id+F}{d(d+1)},
+\end{equation}
+where $F(x\otimes y)=y\otimes x$.
+For completeness, when $d\geq2$, invariance under coordinate phases
+leaves only paired coordinate indices in this moment. Permutation
+invariance makes $\mathbb E|\psi_j|^4=u$ and
+$\mathbb E|\psi_j|^2|\psi_k|^2=v$ for $j\ne k$.
+Invariance under replacing $\psi_1$ by $(\psi_1+\psi_2)/\sqrt2$
+gives $u=u/2+v$, so $u=2v$. Taking the expectation of
+$(\sum_j|\psi_j|^2)^2=1$ gives $du+d(d-1)v=1$.
+Hence $v=1/[d(d+1)]$, which proves \eqref{eq:moment} entrywise.
+For $d=1$ the identity is immediate.
+
+Using $\tr((A\otimes A)F)=\tr A^2$, we obtain
+\begin{equation}\label{eq:haar}
+ \int a(P)\,d\mu(P)
+ =\sum_i\int(\tr PA_i)^2\,d\mu(P)
+ =\frac{\sum_i[(\tr A_i)^2+\tr A_i^2]}{d(d+1)}
+ =\frac{T+d}{d(d+1)}.
+\end{equation}
+If the nonnegative eigenvalues of $A_i$ are $\alpha_{ik}$, then
+\begin{equation}\label{eq:rank}
+ (\tr A_i)^2-\tr A_i^2
+   =2\sum_{k<\ell}\alpha_{ik}\alpha_{i\ell}\geq0.
+\end{equation}
+Its equality case, because $A_i\ne0$, is rank one.
+Also $\sum_i\tr A_i^2=\tr\Id=d$, so $T\geq d$.
+Integrating \eqref{eq:pointwise} and substituting \eqref{eq:haar}
+proves \eqref{eq:gap}. All integrands are continuous on compact
+projective space: entropy is continuous because $x\log x$ extends
+continuously to zero, and \eqref{eq:pointwise} gives continuity of $D$.
+
+Suppose the entropy bound is attained. Formula \eqref{eq:gap} implies
+$T=d$ and zero average relative entropy. Every term in
+\eqref{eq:rank} vanishes, so $E_i=c_i\Pi_i$ for rank-one projectors
+$\Pi_i$ and $c_i=\tr E_i>0$. Nonnegative continuous relative entropy
+with zero integral vanishes everywhere: every nonempty open set of
+projective space has positive Haar measure. Its equality case therefore
+gives $\cE(P)=\sigma_P$ for every pure $P$.
+Pure projectors span Hermitian matrices by spectral decomposition;
+every complex matrix is a sum of a Hermitian matrix and $\mathrm i$
+times a Hermitian matrix. Complex linearity proves \eqref{eq:depol}.
+
+The rank-one sandwich identity
+$\Pi_iX\Pi_i=\tr(\Pi_iX)\Pi_i$ now yields
+\[
+ \sum_i\tr(\Pi_iE_j)E_i
+ =\cE(E_j)=\frac{E_j+c_j\sum_i E_i}{d+1}.
+\]
+Linear independence of the MIC effects gives
+\begin{equation}\label{eq:coeff}
+ \tr(\Pi_iE_j)=\frac{\delta_{ij}+c_j}{d+1}.
+\end{equation}
+At $i=j$ the left side is $c_j$, so $c_j=1/d$.
+Multiplying \eqref{eq:coeff} by $c_i=1/d$ proves \eqref{eq:sic}.
+This identifies the original MIC, rather than a different SIC.
+
+Conversely, suppose the MIC is a SIC. Equation \eqref{eq:sic} implies
+\eqref{eq:coeff} with $c_j=1/d$; hence \eqref{eq:depol} holds first
+on the basis $E_j$ and then on all matrices. The output on a pure input
+has eigenvalues $2/(d+1)$ once and $1/(d+1)$ with multiplicity $d-1$.
+Its entropy is $B_d$, proving the converse. For $d=1$, the unique MIC
+is $E_1=\Id$, and the same formulas give entropy zero.
+\hfill$\square$
+
+\section{Consequences and source coverage}
+\begin{corollary}\label{cor:design}
+Let $P_1,\ldots,P_N$ be pure projectors and $w_j>0$ with
+$\sum_jw_j=1$ and
+\[
+ \sum_jw_jP_j\otimes P_j=\frac{\Id+F}{d(d+1)}.
+\]
+For every MIC, $\sum_jw_jS(\cE(P_j))\leq B_d$, with equality if and
+only if that MIC is a SIC.
+\end{corollary}
+\begin{proof}
+Replace the integral in \eqref{eq:haar} by the weighted sum; the
+second-moment assumption gives exactly the same value.
+Formula \eqref{eq:gap} follows with the same replacement. Equality
+forces rank-one effects and $\cE(P_j)=(\Id+P_j)/(d+1)$ for all $j$.
+These projectors span the Hermitian matrices. Indeed, a Hermitian $X$
+orthogonal to them has
+\[
+ 0=\sum_jw_j(\tr XP_j)^2
+   =\frac{(\tr X)^2+\tr X^2}{d(d+1)},
+\]
+so $X=0$. Linearity gives \eqref{eq:depol}, and
+\eqref{eq:coeff} completes the proof. A SIC gives equality on every
+pure input, proving the converse.
+\end{proof}
+In particular, any SIC or complete set of mutually unbiased bases used
+as an input two-design gives the same test. The argument uses the
+second moment of $a(P)$, not a claim that entropy or the maximum
+eigenvalue is a quadratic polynomial in $P$.
+
+\begin{corollary}\label{cor:quantitative}
+If $\Delta=B_d-\int S(\cE(P))\,d\mu(P)$, then
+\[
+ 0\leq T-d\leq\frac{d(d+1)}{\log2}\Delta,
+ \qquad
+ \int\|\cE(P)-\sigma_P\|_\HS^2\,d\mu(P)\leq2\Delta.
+\]
+Both estimates also hold for the weighted average in
+Corollary~\ref{cor:design}.
+\end{corollary}
+\begin{proof}
+The first bound follows directly from \eqref{eq:gap}. To prove the
+second without a dimension-dependent constant, let $f(x)=x\log x$.
+For $0\leq r\leq1$ and $0<s\leq1$, $f''(x)=1/x\geq1$ gives
+\[
+ r\log(r/s)-r+s\geq\tfrac12(r-s)^2,
+\]
+with $r=0$ included by continuity. Applying this inequality to the
+spectral-overlap expression for $D$ gives
+$D(\rho\Vert\sigma)\geq\frac12\tr(\rho-\sigma)^2$:
+the squared term sums to
+$\tr\rho^2+\tr\sigma^2-2\tr\rho\sigma$.
+Integration, or the finite weighted sum, and \eqref{eq:gap} finish
+the proof.
+\end{proof}
+
+\section{Related equality cases and the postscript}
+
+\begin{corollary}[Arbitrary finite POVMs]\label{cor:povm}
+Let $E_1,\ldots,E_m$ be nonzero positive effects summing to $\Id$;
+linear independence and $m=d^2$ are not assumed. The entropy bound and
+\eqref{eq:gap} still hold, for Haar inputs or a positive input two-design.
+Equality holds exactly when
+$E_i=c_i\Pi_i$, $c_i>0$, and
+\begin{equation}\label{eq:weighted}
+ \sum_i\frac{c_i}{d}\Pi_i\otimes\Pi_i
+   =\frac{\Id+F}{d(d+1)}.
+\end{equation}
+Thus the normalized effects form a weighted projective two-design.
+Equality requires $m\geq d^2$; at $m=d^2$ the measurement is a SIC.
+\end{corollary}
+\begin{proof}
+The derivation of \eqref{eq:gap} and its zero case used neither
+independence nor the number of effects: equality is equivalent to
+rank-one effects and \eqref{eq:depol}. For finite-design inputs, their
+spanning property gives the same conclusion.
+For rank-one effects, the channel is
+$\cE(X)=\sum_i c_i\tr(\Pi_iX)\Pi_i$.
+Pairing its depolarizing identity with an arbitrary $Y$ gives
+\[
+ \sum_i c_i\tr(\Pi_iX)\tr(\Pi_iY)
+   =\frac{\tr X\tr Y+\tr(XY)}{d+1}.
+\]
+Since products $Y\otimes X$ span the tensor matrix space and
+$\tr((Y\otimes X)F)=\tr(YX)$, this is equivalent to
+\eqref{eq:weighted}. The depolarizing map is invertible, so its range,
+contained in the span of the $\Pi_i$, has dimension $d^2$.
+Consequently $m\geq d^2$. At equality in this count the effects are a
+basis, and the coefficient argument \eqref{eq:coeff} proves the SIC claim.
+Conversely, \eqref{eq:weighted} gives the channel identity and hence
+entropy $B_d$ on every pure input.
+\end{proof}
+The weighted-design condition and its minimal-cardinality SIC case are
+the standard tight-measurement results of \cite[Theorem 4 and Proposition 12]{Scott};
+the entropy identity selects exactly this class.
+
+\begin{corollary}[Depolarizing endpoint]\label{cor:alpha}
+For $d>1$, if a MIC has channel
+$\cE(X)=\alpha X+(1-\alpha)(\tr X)\Id/d$, then
+\[
+ T=1+(d^2-1)\alpha,\qquad \frac1{d+1}\leq\alpha<1.
+\]
+The lower endpoint occurs exactly for SICs.
+\end{corollary}
+\begin{proof}
+Substitution in \eqref{eq:haar} gives the identity for $T$.
+Its lower bound is \eqref{eq:rank}. For the upper bound,
+$(\tr A_i)^2\leq d\tr A_i^2$ gives $T\leq d^2$.
+Equality makes every $A_i$ scalar, contrary to MIC independence for
+$d>1$. At the lower endpoint the pure-output spectrum has entropy
+$B_d$, so Theorem~\ref{thm:main} applies.
+\end{proof}
+This recovers the endpoint restriction in \cite[Section II]{DS}; the
+SIC-based constructions for intermediate parameters are their prior result.
+
+\begin{corollary}[Entropy exchange, \cite{DS}, Theorem 3]\label{cor:exchange}
+Put $\Phi=|\Omega\rangle\langle\Omega|$ with
+$|\Omega\rangle=d^{-1/2}\sum_k|kk\rangle$, and
+$J=(\mathrm{id}\otimes\cE)(\Phi)$,
+$\tau=(\Id+d\Phi)/[d(d+1)]$. For any finite POVM as above,
+\[
+ \log d+\frac{d-1}{d}\log(d+1)-S(J)
+ =D(J\Vert\tau)+\frac{T-d}{d^2}\log(d+1).
+\]
+Equality holds exactly for the weighted designs of
+Corollary~\ref{cor:povm}; for a MIC it holds exactly for a SIC.
+\end{corollary}
+\begin{proof}
+The Kraus expression gives
+$\tr(\Phi J)=\sum_i|\tr A_i|^2/d^2=T/d^2$, while
+$\log\tau=-\log[d(d+1)]\Id+\log(d+1)\Phi$.
+Substitution in relative entropy proves the identity.
+Its zero case is $T=d$ and $J=\tau$; equality of their matrix blocks
+is precisely \eqref{eq:depol}. Corollary~\ref{cor:povm} finishes.
+\end{proof}
+
+\begin{corollary}[The postscript's qubit covariance statement]\label{cor:qubit}
+Every unbiased rank-one qubit MIC is unitarily equivalent to a
+Pauli-covariant MIC.
+\end{corollary}
+\begin{proof}
+Write $E_i=(\Id+n_i\cdot\boldsymbol\sigma)/4$; then $|n_i|=1$
+and $\sum_{i=1}^4 n_i=0$. Opposite pair sums show
+$n_1\cdot n_2=n_3\cdot n_4$ and the other paired identities.
+The vectors $a=(n_1+n_2)/2$, $b=(n_1+n_3)/2$, $c=(n_1+n_4)/2$
+are therefore mutually orthogonal, and the four Bloch vectors are
+$a+b+c$, $a-b-c$, $-a+b-c$, $-a-b+c$.
+None of $a,b,c$ is zero, since otherwise the effects would not span
+all qubit matrices. A spatial rotation aligns these orthogonal axes
+with the coordinate axes. Its corresponding unitary takes the MIC to
+the orbit generated by the three Pauli half-turns.
+\end{proof}
+
+\begin{corollary}[The postscript's spectral-average shortcut]\label{cor:shortcut}
+A two-design does not in general reproduce the Haar average of the
+largest output eigenvalue, even for an unbiased rank-one qubit MIC.
+The entropy-saturation conclusion of the postscript nevertheless holds,
+by Theorem~\ref{thm:main} or Corollary~\ref{cor:design}.
+\end{corollary}
+\begin{proof}
+Let $n=(1/\sqrt2,1/2,1/2)$ and let $n_i$ be its four sign changes with
+an even number of minus signs. With the Pauli vector $\boldsymbol\sigma$,
+take $E_i=(\Id+n_i\cdot\boldsymbol\sigma)/4$.
+These rank-one effects sum to $\Id$ and form a basis: their coefficient
+matrix is an invertible sign matrix times a nonsingular diagonal matrix.
+The channel maps a Bloch vector $r$ to $Mr$, where
+$M=\frac14\sum_i n_i n_i^{\mathsf T}
+=\operatorname{diag}(1/2,1/4,1/4)$.
+For the tetrahedral SIC inputs
+$r_j=(\pm1,\pm1,\pm1)/\sqrt3$ with even minus parity,
+$|Mr_j|^2=1/8$, so their mean largest eigenvalue is
+$(1+1/(2\sqrt2))/2$.
+For Haar inputs, $|Mr|^2=(1+3r_x^2)/16$ has mean $1/8$ but is
+nonconstant. Strict concavity of the square root gives
+\[
+ \int\lambda_{\max}(\cE(P))\,d\mu(P)
+ =\tfrac12(1+\mathbb E|Mr|)
+ <\tfrac12(1+1/(2\sqrt2)).
+\]
+Thus the two-design property alone does not justify the postscript's
+spectral averaging step: it reproduces quadratic moments, not arbitrary
+spectral functions. The postscript also assumes entropy saturation;
+under that hypothesis the relative-entropy identity does give a constant
+output spectrum and hence validates the replacement. This example
+refutes the unrestricted averaging assertion, not the postscript's
+conclusion under its stated saturation hypothesis.
+\end{proof}
+
+\paragraph{Coverage of the posing source and its cross-reference.}
+The statuses below distinguish the proved conclusions, an explicitly
+corrected averaging statement, previously proved results, and questions
+outside the entropy equality case.
+{\small
+\begin{longtable}{@{}p{0.28\linewidth}p{0.18\linewidth}p{0.47\linewidth}@{}}
+\toprule
+Source item & Status & Scope \\
+\midrule
+\endhead
+\cite{DS}, Lemma 1 & Prior proof cited & The moment bound follows from \eqref{eq:haar} and $\lambda_{\max}\geq a(P)$. \\
+\cite{DS}, Theorem 1 & Prior proof cited & Channel equivalence; \eqref{eq:coeff} recovers the same-MIC statement. \\
+\cite{DS}, Section II, endpoint & Proved & Corollary~\ref{cor:alpha}; the SIC constructions are prior results. \\
+\cite{DS}, Proposition 1, Remarks; Appendices A--B & Not covered & General depolarizing families, quasi-SIC constructions, and orthogonal-remixing conditions. \\
+\cite{DS}, Theorem 2 & Proved & The bound, SIC attainment, and exact deficit are in Theorem~\ref{thm:main}. \\
+\cite{DS}, Conjecture 1, p.~5 & Proved & The attaining MIC itself is a SIC, for every $d\geq1$. \\
+\cite{DS}, Theorem 3 & Prior proof cited & Corollary~\ref{cor:exchange} recovers it and gives its exact deficit. \\
+\cite{DS}, postscript, qubit conclusion & Proved & Theorem~\ref{thm:main} includes all qubit MICs, without unbiasedness. \\
+\cite{DS}, postscript, unbiased rank-one qubit covariance & Proved & Corollary~\ref{cor:qubit} supplies the Bloch-vector argument. \\
+Postscript's spectral-average replacement, without saturation & Refuted and corrected & Corollary~\ref{cor:shortcut} refutes the unrestricted reading; the postscript's saturated case is valid. \\
+\cite{PPPR}, Theorem III.2; Corollary III.3 & Prior proof cited & Entanglement-breaking rank and SIC-channel equivalence; first preprint 2018. \\
+\cite{DS}, Section IV & Not covered & Arbitrary EBMC repreparations; Corollary~\ref{cor:povm} covers rank-one self-repreparation only. \\
+\cite{DS}, introduction and postscript: SIC existence in every $d$ & Not covered & The equality characterization is conditional and does not construct SICs. \\
+\bottomrule
+\end{longtable}}
+
+\paragraph{Mathematical verification scope.}
+In the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/0b9787cf2582188d0ab3da380adab3fa26bea39c/D5/S3/Quantum/Measurements/LudersEntropySaturationSIC.lean}{\texttt{LudersEntropySaturationSIC.lean}},
+the namespace is
+\texttt{D5.S3.Quantum.Measurements.}\allowbreak\texttt{LudersEntropySaturationSIC}.
+The declaration \texttt{result : claim} states that a MIC attaining
+$B_d$ implies the existence of a SIC in that dimension.
+The file-local declaration \texttt{saturation\_forces\_rank\_one}
+gives rank-one effects from saturation.
+The file-local declarations \texttt{depolarizing\_identity} and
+\texttt{sic\_coefficients} respectively express
+\eqref{eq:depol} under entropy saturation and the SIC structure of the
+same MIC from rank one and that identity.
+The proof of \texttt{result} chooses the original MIC as the existential
+witness; its displayed proposition has the weaker existential wording.
+The converse, finite-design and quantitative statements, arbitrary-POVM
+extension, entropy-exchange identity, qubit covariance and spectral-average counterexample
+have written proofs above. The accompanying \texttt{verify.py} gives
+finite exact checks for explicit SICs in dimensions $1$, $2$ and $3$;
+and the anisotropic-qubit spectral-average example;
+these are finite identities, distinct from the all-dimensional written proofs.
+
+\begin{thebibliography}{9}
+\bibitem{DS} J. B. DeBrota and B. C. Stacey,
+L\"uders channels and the existence of symmetric-informationally-complete measurements,
+\emph{Phys. Rev. A} \textbf{100}, 062327 (2019).
+\href{https://doi.org/10.1103/PhysRevA.100.062327}{doi:10.1103/PhysRevA.100.062327}.
+\href{https://arxiv.org/abs/1907.10999v2}{arXiv:1907.10999v2}, Section III, Conjecture 1; postscript.
+\bibitem{PPPR} S. K. Pandey, V. I. Paulsen, J. Prakash and M. Rahaman,
+Entanglement breaking rank and the existence of SIC POVMs,
+\emph{J. Math. Phys.} \textbf{61}, 042203 (2020).
+\href{https://doi.org/10.1063/1.5045184}{doi:10.1063/1.5045184}.
+\href{https://arxiv.org/abs/1805.04583v3}{arXiv:1805.04583v3} (first preprint, 2018).
+\bibitem{Scott} A. J. Scott,
+Tight informationally complete quantum measurements,
+\emph{J. Phys. A: Math. Gen.} \textbf{39}, 13507--13530 (2006).
+\href{https://doi.org/10.1088/0305-4470/39/43/009}{doi:10.1088/0305-4470/39/43/009}.
+\href{https://arxiv.org/abs/quant-ph/0604049v6}{arXiv:quant-ph/0604049v6}.
+\bibitem{Renes} J. M. Renes, R. Blume-Kohout, A. J. Scott and C. M. Caves,
+Symmetric informationally complete quantum measurements,
+\emph{J. Math. Phys.} \textbf{45}, 2171--2180 (2004).
+\href{https://doi.org/10.1063/1.1737053}{doi:10.1063/1.1737053}.
+\href{https://arxiv.org/abs/quant-ph/0310075}{arXiv:quant-ph/0310075}.
+\end{thebibliography}
+\medskip
+\noindent\small Haobo Ma and Wenlin Zhang. Licensed under
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}

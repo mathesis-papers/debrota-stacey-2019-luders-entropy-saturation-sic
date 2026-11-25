@@ -1,0 +1,8 @@
+{
+  "references": [
+    {"key": "DS", "authors": ["John B. DeBrota", "Blake C. Stacey"], "title": "Luders channels and the existence of symmetric-informationally-complete measurements", "journal": "Physical Review A", "volume": "100", "article": "062327", "year": 2019, "doi": "10.1103/PhysRevA.100.062327", "source_url": "https://arxiv.org/abs/1907.10999v2", "locators": ["Lemma 1, equations (12)-(18)", "Theorem 1", "Section III, Theorem 2 and Conjecture 1", "Theorem 3", "Postscript"]},
+    {"key": "PPPR", "authors": ["Satish K. Pandey", "Vern I. Paulsen", "Jitendra Prakash", "Mizanur Rahaman"], "title": "Entanglement breaking rank and the existence of SIC POVMs", "journal": "Journal of Mathematical Physics", "volume": "61", "article": "042203", "year": 2020, "doi": "10.1063/1.5045184", "source_url": "https://arxiv.org/abs/1805.04583v3", "locators": ["Theorem III.2", "Corollary III.3"], "first_preprint_year": 2018},
+    {"key": "Scott", "authors": ["A. J. Scott"], "title": "Tight informationally complete quantum measurements", "journal": "Journal of Physics A: Mathematical and General", "volume": "39", "pages": "13507-13530", "year": 2006, "doi": "10.1088/0305-4470/39/43/009", "source_url": "https://arxiv.org/abs/quant-ph/0604049v6", "locators": ["Section II, equation (6) and Theorem 4", "Section V"]},
+    {"key": "Renes", "authors": ["Joseph M. Renes", "Robin Blume-Kohout", "A. J. Scott", "Carlton M. Caves"], "title": "Symmetric informationally complete quantum measurements", "journal": "Journal of Mathematical Physics", "volume": "45", "pages": "2171-2180", "year": 2004, "doi": "10.1063/1.1737053", "source_url": "https://arxiv.org/abs/quant-ph/0310075", "locators": ["SIC definition and projective two-design property"]}
+  ]
+}
