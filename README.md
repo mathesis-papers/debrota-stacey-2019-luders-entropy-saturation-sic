@@ -5,13 +5,15 @@
 We prove Section III, Conjecture 1 immediately after Theorem 2 (p. 5) in DeBrota and Stacey, Physical Review A 100, 062327 (2019): a Luders minimal informationally complete channel attains the Haar-averaged output-entropy bound if and only if its measurement is itself a SIC, in every positive finite dimension. An exact entropy-deficit identity gives quantitative bounds, finite two-design tests and an arbitrary-finite-POVM equality characterization by weighted projective two-designs. The same decomposition recovers the entropy-exchange theorem and explains why the postscript's spectral-average replacement requires its saturation hypothesis.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.23931736](https://doi.org/10.5281/zenodo.23931736)
+- Concept DOI: [https://doi.org/10.5281/zenodo.23931735](https://doi.org/10.5281/zenodo.23931735)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [debrota-stacey-2019-luders-entropy-saturation-sic](https://mathesis-omega-research.apps.chrono-ai.fun/papers/debrota-stacey-2019-luders-entropy-saturation-sic?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/debrota-stacey-2019-luders-entropy-saturation-sic?version=2
+Haobo Ma, Wenlin Zhang (2026). DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements. Mathesis, version 2. https://doi.org/10.5281/zenodo.23931736
 
 ## Statement progress
 
