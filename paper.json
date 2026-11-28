@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.23931735",
     "current_version": 2,
     "doi": "10.5281/zenodo.23931736",
+    "kind": "note",
     "lean_source": {
       "revision": "0b9787cf2582188d0ab3da380adab3fa26bea39c",
       "url": "https://github.com/the-omega-institute/trureturing/blob/0b9787cf2582188d0ab3da380adab3fa26bea39c/D5/S3/Quantum/Measurements/LudersEntropySaturationSIC.lean"
@@ -55,10 +56,12 @@
     "title": "DeBrota--Stacey, Section III, Conjecture 1 after Theorem 2: entropy saturation characterizes SIC measurements",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-25T17:32:10.883408471Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "debrota-stacey-2019-luders-entropy-saturation-sic"
